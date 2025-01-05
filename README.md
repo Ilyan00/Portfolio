@@ -14,3 +14,9 @@ Bienvenue sur mon portfolio ! Ce site présente quelques-uns de mes projets. Vou
    ```bash
    git clone https://github.com/ton-utilisateur/ton-portfolio.git
 2. Puis lancer le fichier index.html
+
+## Me contacter 📬
+
+Si vous voulez me contacter :
+1. **LinkedIn** : [Mon profil LinkedIn]([https://www.linkedin.com/in/ton-profile/](https://www.linkedin.com/in/ilyan-jude-bain-trimbach-1687a9291/)) 👔
+2. **Email** : [Mon email](mailto:ilyanjudecour@gmail.com) 📧
