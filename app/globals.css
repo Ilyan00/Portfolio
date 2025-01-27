@@ -10,19 +10,3 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
-
-@keyframes slide-down {
-  0% {
-    transform: translateY(0%);
-  }
-  80% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
-.animate-slide-down {
-  animation: slide-down 3s ease-in-out;
-}

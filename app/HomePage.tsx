@@ -1,18 +1,17 @@
 "use client";
 import Image from "next/image";
+import Scroll from "./ScrollComponent";
+import CloudFrontHome from "@/app/assets/CloudFrontHome.svg";
+import CloudBackHome from "@/app/assets/CloudBackHome.svg";
 
-const HomePage = ({ scrollY }) => {
+const HomePage = ({ scrollY }: { scrollY: number }) => {
+  console.log(scrollY);
   return (
-    <section
-      className="relative h-screen bg-blue py-20"
-      style={{
-        transform: `translateY(${scrollY}px)`,
-      }}
-    >
+    <section className="relative h-screen bg-blue">
       <div
-        className="absolute h-full w-full flex z-20 flex-col items-center justify-center gap-10 text-center"
+        className="absolute h-full w-full flex z-50 flex-col items-center justify-center gap-10 text-center"
         style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
+          transform: `translateY(${scrollY * 0.4}px)`,
         }}
       >
         <div>
@@ -31,38 +30,27 @@ const HomePage = ({ scrollY }) => {
           <li>[02 - Projects]</li>
           <li>[03 - Contacts]</li>
         </ul>
-        <div className="flex flex-col items-center">
-          <p className="text-center bg-pink p-3 rounded-full border-2 border-black z-20">
-            Scroll <br /> Down
-          </p>
-          <Image
-            src="/fleche.svg"
-            alt="Background image"
-            height={20}
-            width={20}
-            className="-mt-2 "
-          />
-        </div>
+        <Scroll />
       </div>
       <Image
-        src="/CloudFrontHome.svg"
+        src={CloudFrontHome}
         alt="Background image"
         layout="fill"
         objectFit="cover"
         style={{
-          transform: `translateY(${scrollY * 0.6}px)`,
+          transform: `translateY(${scrollY * 0.4}px)`,
         }}
-        className="absolute h-full w-full object-cover animate-slide-down overflow-visible z-10"
+        className="absolute h-full w-full object-cover overflow-visible z-40"
       />
       <Image
-        src="/CloudBackHome.svg"
+        src={CloudBackHome}
         alt="Background image"
         layout="fill"
         objectFit="cover"
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
-        className="absolute h-full w-full object-cover animate-slide-down overflow-visible z-0"
+        className="absolute h-full w-full object-cover overflow-visible z-30"
       />
     </section>
   );

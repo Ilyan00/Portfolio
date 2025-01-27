@@ -7,8 +7,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleWheel = (event) => {
-      // Simule un déplacement vertical basé sur la molette
+    const handleWheel = (event: any) => {
       setScrollY((prev) => Math.max(0, prev + event.deltaY * 0.5));
     };
 
@@ -19,7 +18,7 @@ export default function Home() {
     };
   }, []);
   return (
-    <div>
+    <div className="h-screen overflow-hidden">
       <HomePage scrollY={scrollY} />
       <AboutPage scrollY={scrollY} />
     </div>
