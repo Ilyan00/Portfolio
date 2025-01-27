@@ -9,16 +9,18 @@ const HomePage = ({ scrollY }: { scrollY: number }) => {
   return (
     <section className="relative h-screen bg-blue">
       <div
-        className="absolute h-full w-full flex z-50 flex-col items-center justify-center gap-10 text-center"
+        className="absolute h-full w-full flex z-50 flex-col items-center justify-center pt-20 gap-10 text-center"
         style={{
           transform: `translateY(${scrollY * 0.4}px)`,
         }}
       >
         <div>
-          <p className="text-2xl opacity-50">Web Developer</p>
-          <h1 className="text-4xl font-bold">
+          <p className="text-cream text-4xl md:text-2xl opacity-75 ">
+            Web Developer
+          </p>
+          <h1 className="text-cream text-4xl md:text-6xl font-bold font-modak">
             BAIN-TRIMBACH{" "}
-            <span className="opacity-75">
+            <span className="text-cream opacity-80 font-modak">
               {" "}
               <br />
               Ilyan-Jude

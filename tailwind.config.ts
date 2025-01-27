@@ -8,10 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        modak: "var(--font-modak)",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        blue: "#96ADD6",
+        blue: "#ABCAFF",
         pink: "#F3D7D3",
         cream: "#F2EFEA",
         cloudDarkBlue: "#D8D0F8",
