@@ -7,7 +7,7 @@ import CloudBackHome from "@/app/assets/CloudBackHome.svg";
 const HomePage = ({ scrollY }: { scrollY: number }) => {
   console.log(scrollY);
   return (
-    <section className="relative h-screen bg-blue">
+    <section className="relative h-screen">
       <div
         className="absolute h-full w-full flex z-50 flex-col items-center justify-center pt-20 gap-10 text-center"
         style={{
@@ -42,7 +42,7 @@ const HomePage = ({ scrollY }: { scrollY: number }) => {
         style={{
           transform: `translateY(${scrollY * 0.4}px)`,
         }}
-        className="absolute h-full w-full object-cover overflow-visible z-40"
+        className="absolute h-full w-full object-cover overflow-visible z-40 "
       />
       <Image
         src={CloudBackHome}
@@ -52,7 +52,7 @@ const HomePage = ({ scrollY }: { scrollY: number }) => {
         style={{
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
-        className="absolute h-full w-full object-cover overflow-visible z-30"
+        className="absolute h-full w-full object-cover overflow-visible z-30 "
       />
     </section>
   );

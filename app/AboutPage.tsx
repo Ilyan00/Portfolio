@@ -1,8 +1,10 @@
 "use client";
+import { Linkedin, Github, Sun } from "lucide-react";
 import Image from "next/image";
+import CloudBackAbout from "@/app/assets/CloudBackAbout.svg";
+import CloudFrontAbout from "@/app/assets/CloudFrontAbout.svg";
 import Link from "next/link";
 import MyProfilImage from "@/app/assets/me.jpeg";
-import { Linkedin, Github, Sun } from "lucide-react";
 
 const AboutPage = ({ scrollY }: { scrollY: number }) => {
   if (scrollY <= 1805) {
@@ -12,12 +14,17 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
   }
   return (
     <section
-      className="absolute top-0 left-0 w-full h-screen pt-8 px-5"
+      className="absolute top-0 left-0 w-full h-screen pt-8 z-20 "
       style={{
         transform: `translateY(${scrollY * 0.3}px)`,
       }}
     >
-      <div className="relative bg-blue w-full h-full pt-28">
+      <div
+        className="relative w-full h-full pt-28 z-10 bg-blue"
+        style={{
+          transform: `translateY(${scrollY * 0.2}px)`,
+        }}
+      >
         <div className="flex justify-around w-full">
           <div className="md:w-1/2 xl:w-1/4">
             <h2 className="text-cream text-6xl font-modak">About:</h2>
@@ -30,15 +37,15 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
               internship opportunities to enhance my skills and take on new
               challenges.
             </p>
-            <div className="flex text-black gap-10 flex-wrap w-full mt-5 ">
+            <div className="flex text-cream gap-10 flex-wrap w-full mt-5 ">
               <Link
-                className="bg-cloudDarkBlue rounded-full border-black border-2 p-5 hover:bg-cloudBlue transition-all"
+                className="bg-cloudDarkViolet rounded-full border-cream border-2 p-5 hover:bg-cloudViolet hover:text-black hover:border-black transition-all"
                 href="https://www.linkedin.com/in/ilyan-jude-bain-trimbach-1687a9291/"
               >
                 <Linkedin />
               </Link>
               <Link
-                className="bg-cloudDarkBlue rounded-full border-black border-2 p-5 hover:bg-cloudBlue transition-all"
+                className="bg-cloudDarkViolet rounded-full border-cream border-2 p-5 hover:bg-cloudViolet hover:text-black hover:border-black transition-all"
                 href="https://github.com/Ilyan00"
               >
                 <Github />
@@ -46,7 +53,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
             </div>
           </div>
           <div className="hidden w-1/3 md:flex items-center relative">
-            <div className="hidden lg:block absolute text-6xl top-16 left-60 text-cream">
+            <div className="hidden lg:block absolute text-6xl top-16 left-28 xl:left-60 text-cream">
               <p className="z-50 relative font-modak">Portfolio</p>
               <p className="z-30 relative opacity-50 font-modak">Portfolio</p>
               <p className="z-20 relative opacity-50 font-modak">Portfolio</p>
@@ -56,8 +63,8 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
               <Image
                 src={MyProfilImage}
                 alt="My profile"
-                height={150}
-                width={150}
+                height={800}
+                width={800}
                 className="object-cover w-full h-52"
               />
             </div>
@@ -67,6 +74,28 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
           size={120}
           strokeWidth={1}
           className="absolute top-0 right-0 text-yellow-300"
+        />
+      </div>
+      <div className="absolute -top-56 h-full w-full z-0">
+        <Image
+          src={CloudBackAbout}
+          alt="Background image"
+          layout="fill"
+          objectFit="cover"
+          className="h-full w-full object-cover overflow-visible "
+          style={{
+            transform: `translateY(${scrollY * 0.1}px)`,
+          }}
+        />
+        <Image
+          src={CloudFrontAbout}
+          alt="Background image"
+          layout="fill"
+          objectFit="cover"
+          className="h-full w-full object-cover overflow-visible "
+          style={{
+            transform: `translateY(${scrollY * 0.2}px)`,
+          }}
         />
       </div>
     </section>
