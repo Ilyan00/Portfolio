@@ -4,12 +4,13 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import CloudBackProject from "@/app/assets/CloudBackProject.svg";
 import Moon from "@/app/assets/Moon.svg";
+import CloudBackProject from "@/app/assets/CloudBackProject.svg";
 import CloudFrontProject from "@/app/assets/CloudFrontProject.svg";
+import CloudNigthProject from "@/app/assets/CloudNigthProject.svg";
 
-import imageProject1 from "@/app/assets/bap.png";
-import imageProject2 from "@/app/assets/image2.png";
+import imageProject1 from "@/app/assets/image2.png";
+import imageProject2 from "@/app/assets/bap.png";
 import imageProject3 from "@/app/assets/image3.png";
 
 const projects = [
@@ -53,8 +54,8 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
 
   return (
     <section
-      className="absolute top-0 left-0 w-full h-screen pt-8 z-10 bg-NightSky"
-      style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+      className="absolute top-0 left-0 w-full h-screen pt-8 z-10"
+      style={{ transform: `translateY(${scrollY * 0.5}px)` }}
     >
       <div className="relative w-full h-full pt-24 z-30">
         <div
@@ -136,12 +137,20 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
 
       <div className="absolute -top-24 h-full w-full">
         <Image
+          src={CloudNigthProject}
+          alt="Background image"
+          layout="fill"
+          objectFit="cover"
+          className="overflow-visible absolute z-0 !-top-36"
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+        />
+        <Image
           src={CloudBackProject}
           alt="Background image"
           layout="fill"
           objectFit="cover"
-          className="h-full w-full object-cover overflow-visible absolute z-10"
-          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+          className="h-full w-full object-cover overflow-visible absolute"
+          style={{ transform: `translateY(${scrollY * 0.05}px)` }}
         />
         <Image
           src={CloudFrontProject}
