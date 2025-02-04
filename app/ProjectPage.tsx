@@ -64,17 +64,23 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
         >
           <Swiper
             className="h-full w-full relative"
+            mousewheel={{
+              forceToAxis: true,
+              sensitivity: 2,
+            }}
+            freeMode={true}
             spaceBetween={10}
-            slidesPerView={2}
+            slidesPerView={2} 
             breakpoints={{
               640: { slidesPerView: 2 },
               768: { slidesPerView: 4 },
             }}
             loop={true}
             centeredSlides
-            onSlideChange={(swiper) => {
-              setActiveProject(projects[swiper.realIndex]);
-            }}
+            touchEventsTarget="container"
+            onSlideChange={(swiper) =>
+              setActiveProject(projects[swiper.realIndex])
+            }
           >
             {projects.map((project, index) => (
               <SwiperSlide

@@ -118,7 +118,7 @@ const FormPage = () => {
         className="absolute !top-10 h-full w-full object-cover overflow-visible z-40 "
       />
       <div className="absolute h-screen w-screen">
-        <div className="relative z-50 w-full h-[30%] overflow-hidden">
+        <div className="relative z-30 w-full h-[30%] overflow-hidden">
           <div
             className={`absolute top-28 opacity-0 object-cover z-0 w-[30rem] transition-transform ${
               animatePlane ? "animate-flyAcross" : ""

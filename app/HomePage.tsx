@@ -5,7 +5,6 @@ import CloudFrontHome from "@/app/assets/CloudFrontHome.svg";
 import CloudBackHome from "@/app/assets/CloudBackHome.svg";
 
 const HomePage = ({ scrollY }: { scrollY: number }) => {
-  console.log(scrollY);
   return (
     <section className="relative h-screen">
       <div
@@ -19,9 +18,8 @@ const HomePage = ({ scrollY }: { scrollY: number }) => {
             Web Developer
           </p>
           <h1 className="text-cream text-4xl md:text-6xl font-bold font-modak">
-            BAIN-TRIMBACH{" "}
-            <span className="text-cream opacity-80 font-modak">
-              {" "}
+            BAIN-TRIMBACH
+            <span className="text-cream font-modak">
               <br />
               Ilyan-Jude
             </span>

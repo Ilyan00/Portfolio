@@ -27,7 +27,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
       >
         <div className="flex justify-around w-full">
           <div className="md:w-1/2 xl:w-1/4">
-            <h2 className="text-cream text-6xl font-modak">About:</h2>
+            <h2 className="text-cream text-6xl font-modak">About ..</h2>
             <p className="text-cream pt-5">
               I’m a 19-year-old full-stack developer, student, and freelancer
               who loves building innovative projects. Self-taught, I’ve been
