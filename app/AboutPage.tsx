@@ -39,12 +39,16 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
             </p>
             <div className="flex text-cream gap-10 flex-wrap w-full mt-5 ">
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-cloudDarkViolet rounded-full border-cream border-2 p-5 hover:bg-cloudViolet hover:text-black hover:border-black transition-all"
                 href="https://www.linkedin.com/in/ilyan-jude-bain-trimbach-1687a9291/"
               >
                 <Linkedin />
               </Link>
               <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-cloudDarkViolet rounded-full border-cream border-2 p-5 hover:bg-cloudViolet hover:text-black hover:border-black transition-all"
                 href="https://github.com/Ilyan00"
               >
