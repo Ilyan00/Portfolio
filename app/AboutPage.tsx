@@ -25,7 +25,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
       >
-        <div className="flex justify-around w-full">
+        <div className="flex justify-around w-full md:px-0 px-2">
           <div className="md:w-1/2 xl:w-1/4">
             <h2 className="text-cream text-6xl font-modak">About ..</h2>
             <p className="text-cream pt-5">
