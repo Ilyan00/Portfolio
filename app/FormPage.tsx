@@ -1,6 +1,6 @@
 "use client";
 import { Mail, MessageSquare, User } from "lucide-react";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Image from "next/image";
 import CloudFrontForm from "@/app/assets/CloudFrontForm.svg";
 import CloudBackForm from "@/app/assets/CloudBackForm.svg";
@@ -11,11 +11,12 @@ const FormPage = () => {
   const [message, setMessage] = useState("");
   const [animatePlane, setAnimatePlane] = useState(false);
 
-  const submit = async (event: any) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(event.target);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
@@ -34,19 +35,18 @@ const FormPage = () => {
           }),
         });
 
-        const result = await response.json();
         if (response.ok) {
           setMessage("Message envoyé avec succès !");
           setAnimatePlane(true);
           setTimeout(() => {
-            event.target.reset();
+            form.reset();
           }, 3000);
         } else {
           setMessage("Erreur lors de l'envoi du message.");
           setAnimatePlane(true);
         }
       } catch (error) {
-        setMessage("Une erreur est survenue.");
+        setMessage(`Une erreur est survenue,${error}`);
         setAnimatePlane(true);
       }
     }

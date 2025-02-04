@@ -10,7 +10,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleWheel = (event: any) => {
+    const handleWheel = (event: WheelEvent) => {
       setScrollY((prev) =>
         Math.min(Math.max(0, prev + event.deltaY * 0.5), 5390)
       );
