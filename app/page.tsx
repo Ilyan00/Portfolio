@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import ProjectPage from "./ProjectPage";
@@ -8,25 +8,35 @@ import Ballon from "./Ballon";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
-  const [touchStartY, setTouchStartY] = useState(0);
+  const touchStartY = useRef(0);
+  const maxScroll = useRef(5390);
 
   useEffect(() => {
     const controller = new AbortController();
+
+    const updateScroll = (delta: number) => {
+      setScrollY((prev) => {
+        const newScrollY = Math.min(
+          Math.max(0, prev + delta),
+          maxScroll.current
+        );
+        return newScrollY !== prev ? newScrollY : prev;
+      });
+    };
+
     const handleWheel = (event: WheelEvent) => {
-      setScrollY((prev) =>
-        Math.min(Math.max(0, prev + event.deltaY * 0.5), 5390)
-      );
+      requestAnimationFrame(() => updateScroll(event.deltaY * 0.5));
     };
 
     const handleTouchStart = (event: TouchEvent) => {
-      setTouchStartY(event.touches[0].clientY);
+      touchStartY.current = event.touches[0].clientY;
     };
 
     const handleTouchMove = (event: TouchEvent) => {
       const touchY = event.touches[0].clientY;
-      const deltaY = touchStartY - touchY;
-      setTouchStartY(touchY);
-      setScrollY((prev) => Math.min(Math.max(0, prev - deltaY * 1), 5390));
+      const deltaY = touchStartY.current - touchY;
+      touchStartY.current = touchY;
+      requestAnimationFrame(() => updateScroll(-deltaY));
     };
 
     window.addEventListener("wheel", handleWheel, {
@@ -42,11 +52,9 @@ export default function Home() {
     return () => {
       controller.abort();
     };
-  }, [touchStartY]);
+  }, []);
 
-  const handleResetScroll = () => {
-    setScrollY(0);
-  };
+  const handleResetScroll = () => setScrollY(0);
 
   return (
     <div className="h-screen w-screen overflow-hidden scroll-smooth">

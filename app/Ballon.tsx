@@ -25,7 +25,7 @@ const Ballon = ({
       onClick={() => animation(handleResetScroll)}
       className="absolute p-5 z-50 bottom-20 left-0 w-20"
       style={{
-        transform: `translateY(${scrollY * -0.1}px)`,
+        transform: `translateY(${scrollY * -0.08}px)`,
       }}
     >
       <Image

@@ -73,8 +73,7 @@ const FormPage = () => {
             type="text"
             name="name"
             placeholder="Enter your name"
-            maxLength={20}
-            className="w-full px-5 bg-transparent border-none placeholder:text-black placeholder:text-sm"
+            className="w-full px-5 bg-transparent border-none placeholder:text-black placeholder:text-sm focus:outline-none"
             required
           />
         </div>
@@ -86,8 +85,7 @@ const FormPage = () => {
             type="email"
             name="email"
             placeholder="Enter your email"
-            maxLength={20}
-            className="w-full px-5 bg-transparent border-none placeholder:text-black placeholder:text-sm"
+            className="w-full px-5 bg-transparent border-none placeholder:text-black placeholder:text-sm focus:outline-none"
             required
           />
         </div>
@@ -98,7 +96,7 @@ const FormPage = () => {
           <textarea
             name="message"
             placeholder="Message"
-            className="w-full h-24 px-5 bg-transparent border-none resize-none placeholder:text-black text-sm"
+            className="w-full h-24 px-5 bg-transparent border-none resize-none placeholder:text-black text-sm focus:outline-none"
             required
           ></textarea>
         </div>
