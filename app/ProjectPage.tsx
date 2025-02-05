@@ -49,8 +49,14 @@ const projects = [
 const AboutPage = ({ scrollY }: { scrollY: number }) => {
   const [activeProject, setActiveProject] = useState(projects[0]);
 
-  if (scrollY <= 3899) scrollY = 0;
-  else scrollY -= 3899;
+  if (scrollY <= 3899) {
+    if (scrollY <= 1805) {
+      return;
+    }
+    scrollY = 0;
+  } else {
+    scrollY -= 3899;
+  }
 
   return (
     <section
@@ -70,7 +76,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
             }}
             freeMode={true}
             spaceBetween={10}
-            slidesPerView={2} 
+            slidesPerView={2}
             breakpoints={{
               640: { slidesPerView: 2 },
               768: { slidesPerView: 4 },

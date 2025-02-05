@@ -27,6 +27,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/cvj1dnk.css" />
+        <script src="https://unpkg.com/react-scan/dist/auto.global.js" async />
       </head>
 
       <body className="w-screen h-screen overflow-hidden ">

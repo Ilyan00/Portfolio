@@ -54,6 +54,10 @@ const FormPage = () => {
     setLoading(false);
   };
 
+  if (scrollY >= 3899) {
+    return;
+  }
+
   return (
     <section className="absolute flex align-middle justify-center items-center top-0 left-0 w-screen h-full  z-0 bg-blue">
       <form
