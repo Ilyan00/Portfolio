@@ -18,4 +18,4 @@ bun dev
 
 Puis ouvrer [http://localhost:3000](http://localhost:3000) sur votre navigateur.
 
-[Vous pouvez également retrouver mon portfolio déployé avec Vercel en cliquant ici.](portfolio-ilyan00s-projects.vercel.app)
+[Vous pouvez également retrouver mon portfolio déployé avec Vercel en cliquant ici.](https://portfolio-ilyan00s-projects.vercel.app)
