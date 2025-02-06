@@ -3,7 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 
 export const metadata: Metadata = {
-  title: "Protfolio Ilyan",
+  title: "Portfolio Ilyan",
   description: "Welcome to my portfolio",
 };
 

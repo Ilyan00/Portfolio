@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState, useRef } from "react";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
@@ -8,10 +9,13 @@ import Ballon from "./Ballon";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   const touchStartY = useRef(0);
   const maxScroll = useRef(5390);
 
   useEffect(() => {
+    setIsClient(true);
+
     const controller = new AbortController();
 
     const updateScroll = (delta: number) => {
@@ -39,15 +43,17 @@ export default function Home() {
       requestAnimationFrame(() => updateScroll(-deltaY));
     };
 
-    window.addEventListener("wheel", handleWheel, {
-      signal: controller.signal,
-    });
-    window.addEventListener("touchstart", handleTouchStart, {
-      signal: controller.signal,
-    });
-    window.addEventListener("touchmove", handleTouchMove, {
-      signal: controller.signal,
-    });
+    if (typeof window !== "undefined") {
+      window.addEventListener("wheel", handleWheel, {
+        signal: controller.signal,
+      });
+      window.addEventListener("touchstart", handleTouchStart, {
+        signal: controller.signal,
+      });
+      window.addEventListener("touchmove", handleTouchMove, {
+        signal: controller.signal,
+      });
+    }
 
     return () => {
       controller.abort();
@@ -55,6 +61,8 @@ export default function Home() {
   }, []);
 
   const handleResetScroll = () => setScrollY(0);
+
+  if (!isClient) return null;
 
   return (
     <div className="h-screen w-screen overflow-hidden scroll-smooth">
