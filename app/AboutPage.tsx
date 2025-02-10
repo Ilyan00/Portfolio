@@ -14,13 +14,13 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
   }
   return (
     <section
-      className="absolute top-0 left-0 w-full h-screen pt-8 z-20 "
+      className="absolute top-0 left-0 w-full h-screen pt-8 z-20"
       style={{
         transform: `translateY(${scrollY * 0.3}px)`,
       }}
     >
       <div
-        className="relative w-full h-full pt-28 z-10 bg-blue"
+        className="relative w-full h-full pt-28 z-10 bg-blue mt-6"
         style={{
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
