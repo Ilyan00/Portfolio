@@ -4,7 +4,13 @@ import Scroll from "./ScrollComponent";
 import CloudFrontHome from "@/app/assets/CloudFrontHome.svg";
 import CloudBackHome from "@/app/assets/CloudBackHome.svg";
 
-const HomePage = ({ scrollY }: { scrollY: number }) => {
+const HomePage = ({
+  scrollY,
+  handleScroll,
+}: {
+  scrollY: number;
+  handleScroll: (scrollValue: number) => void;
+}) => {
   return (
     <section className="relative h-screen">
       <div
@@ -26,9 +32,15 @@ const HomePage = ({ scrollY }: { scrollY: number }) => {
           </h1>
         </div>
         <ul className="flex justify-around flex-wrap w-full">
-          <li>[01 - About Me]</li>
-          <li>[02 - Projects]</li>
-          <li>[03 - Contacts]</li>
+          <li className="cursor-pointer" onClick={() => handleScroll(1805)}>
+            [01 - About Me]
+          </li>
+          <li className="cursor-pointer" onClick={() => handleScroll(3899)}>
+            [02 - Projects]
+          </li>
+          <li className="cursor-pointer" onClick={() => handleScroll(5390)}>
+            [03 - Contacts]
+          </li>
         </ul>
         <Scroll />
       </div>

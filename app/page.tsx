@@ -61,12 +61,13 @@ export default function Home() {
   }, []);
 
   const handleResetScroll = () => setScrollY(0);
+  const handleScroll = (scrollValue: number) => setScrollY(scrollValue);
 
   if (!isClient) return null;
 
   return (
     <div className="h-screen w-screen overflow-hidden scroll-smooth">
-      <HomePage scrollY={scrollY} />
+      <HomePage scrollY={scrollY} handleScroll={handleScroll} />
       <Ballon scrollY={scrollY} handleResetScroll={handleResetScroll} />
       <AboutPage scrollY={scrollY} />
       <ProjectPage scrollY={scrollY} />
