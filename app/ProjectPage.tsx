@@ -9,40 +9,58 @@ import CloudBackProject from "@/app/assets/CloudBackProject.svg";
 import CloudFrontProject from "@/app/assets/CloudFrontProject.svg";
 import CloudNigthProject from "@/app/assets/CloudNigthProject.svg";
 
-import imageProject1 from "@/app/assets/image2.png";
-import imageProject2 from "@/app/assets/bap.png";
-import imageProject3 from "@/app/assets/image3.png";
-
+import monito from "@/app/assets/monito.png";
+import cannefy from "@/app/assets/Cannefy.png";
+import pokemon from "@/app/assets/pokemon.png";
+import Link from "next/link";
 const projects = [
   {
-    title: "Project 1",
-    description: "Description du projet 1",
-    image: imageProject1,
+    title: "Monito",
+    description:
+      "Projet de reproduction d'une maquette en SCSS en respectant la hiérarchie BEM.",
+    image: monito,
+    video: "/monito.mp4",
+    link: "https://github.com/Ilyan00/sass_project",
   },
   {
-    title: "Project 2",
-    description: "Description du projet 2",
-    image: imageProject2,
+    title: "Canne'fy",
+    description:
+      "Projet d'une application utilisant l'API Spotify pour lire les playlists de l'utilisateur, avec un vinyle animé et une interface minimaliste. Ce projet est fait en html, css et js.",
+    image: cannefy,
+    video: "/cannefy.mp4",
+    link: "https://github.com/Ilyan00/Vinyle",
   },
   {
-    title: "Project 3",
-    description: "Description du projet 3",
-    image: imageProject3,
+    title: "Pokemon",
+    description:
+      "Projet d'un jeu Pokémon où l'on peut choisir un Pokémon pour combattre un adversaire aléatoire. Ce projet est réalisé en PHP orienté objet.",
+    image: pokemon,
+    video: "/pokemon.mp4",
+    link: "https://github.com/Yohzenn/pokemon_structure_objet",
   },
   {
-    title: "Project 4",
-    description: "Description du projet 4",
-    image: imageProject1,
+    title: "Monito",
+    description:
+      "Projet de reproduction d'une maquette en SCSS en respectant la hiérarchie BEM.",
+    image: monito,
+    video: "/monito.mp4",
+    link: "https://github.com/Ilyan00/sass_project",
   },
   {
-    title: "Project 5",
-    description: "Description du projet 5",
-    image: imageProject2,
+    title: "Canne'fy",
+    description:
+      "Projet d'une application utilisant l'API Spotify pour lire les playlists de l'utilisateur, avec un vinyle animé et une interface minimaliste. Ce projet est fait en html, css et js.",
+    image: cannefy,
+    video: "/cannefy.mp4",
+    link: "https://github.com/Ilyan00/Vinyle",
   },
   {
-    title: "Project 6",
-    description: "Description du projet 6",
-    image: imageProject3,
+    title: "Pokemon",
+    description:
+      "Projet d'un jeu Pokémon où l'on peut choisir un Pokémon pour combattre un adversaire aléatoire. Ce projet est réalisé en PHP orienté objet.",
+    image: pokemon,
+    video: "/pokemon.mp4",
+    link: "https://github.com/Yohzenn/pokemon_structure_objet",
   },
 ];
 
@@ -116,19 +134,30 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
         style={{ transform: `translateY(${scrollY * 0.3}px)` }}
       >
         <div className="hidden lg:block w-1/3 h-52">
-          <Image
-            src={activeProject.image}
-            alt="Project image"
+          <video
+            src={activeProject.video}
             height={800}
             width={416}
             className="object-cover w-full h-full rounded-md"
-          />
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            controls={true}
+          ></video>
         </div>
         <div className="w-full flex flex-col items-center lg:w-1/3">
           <h2 className="font-modak text-6xl font-bold">
             {activeProject.title}
           </h2>
-          <hr className="w-1/2 py-2" />
+          <hr className="w-1/2 py-1" />
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-75 text-center w-4/5 lg:w-full underline py-1 "
+            href={activeProject.link ?? "#"}
+          >
+            <p>Lien Github</p>
+          </Link>
           <p className="opacity-75 text-center w-4/5 lg:w-full">
             {activeProject.description}
           </p>

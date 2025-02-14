@@ -16,7 +16,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
     <section
       className="absolute top-0 left-0 w-full h-screen pt-8 z-20"
       style={{
-        transform: `translateY(${scrollY * 0.3}px)`,
+        transform: `translateY(${scrollY * 0.4}px)`,
       }}
     >
       <div
@@ -27,7 +27,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
       >
         <div className="flex justify-around w-full md:px-0 px-2">
           <div className="md:w-1/2 xl:w-1/4">
-            <h2 className="text-cream text-6xl font-modak">About ..</h2>
+            <h2 className="text-cream text-6xl font-modak">About .</h2>
             <p className="text-cream pt-5">
               I’m a 19-year-old full-stack developer, student, and freelancer
               who loves building innovative projects. Self-taught, I’ve been
@@ -69,7 +69,7 @@ const AboutPage = ({ scrollY }: { scrollY: number }) => {
                 alt="My profile"
                 height={800}
                 width={800}
-                className="object-cover w-full h-52"
+                className="object-cover w-full h-96"
               />
             </div>
           </div>

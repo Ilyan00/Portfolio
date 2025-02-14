@@ -71,7 +71,7 @@ export default function Home() {
       <Ballon scrollY={scrollY} handleResetScroll={handleResetScroll} />
       <AboutPage scrollY={scrollY} />
       <ProjectPage scrollY={scrollY} />
-      <FormPage />
+      <FormPage scrollY={scrollY} />
     </div>
   );
 }

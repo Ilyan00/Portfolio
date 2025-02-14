@@ -6,7 +6,7 @@ import CloudFrontForm from "@/app/assets/CloudFrontForm.svg";
 import CloudBackForm from "@/app/assets/CloudBackForm.svg";
 import Plane from "@/app/assets/Plane.svg";
 
-const FormPage = () => {
+const FormPage = ({ scrollY }: { scrollY: number }) => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [animatePlane, setAnimatePlane] = useState(false);
@@ -54,7 +54,7 @@ const FormPage = () => {
     setLoading(false);
   };
 
-  if (scrollY >= 3899) {
+  if (scrollY <= 3899) {
     return;
   }
 
