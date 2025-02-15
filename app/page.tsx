@@ -61,15 +61,6 @@ export default function Home() {
 
   const handleResetScroll = () => setScrollY(0);
   const handleScroll = (scrollValue: number) => setScrollY(scrollValue);
-  const [IsLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadAssets = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      setIsLoading(false);
-    };
-    loadAssets();
-  }, []);
 
   if (!isClient) return null;
 
