@@ -6,7 +6,6 @@ import AboutPage from "./AboutPage";
 import ProjectPage from "./ProjectPage";
 import FormPage from "./FormPage";
 import Ballon from "./Ballon";
-
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isClient, setIsClient] = useState(false);
@@ -62,16 +61,25 @@ export default function Home() {
 
   const handleResetScroll = () => setScrollY(0);
   const handleScroll = (scrollValue: number) => setScrollY(scrollValue);
+  const [IsLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadAssets = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setIsLoading(false);
+    };
+    loadAssets();
+  }, []);
 
   if (!isClient) return null;
 
   return (
-    <div className="h-screen w-screen overflow-hidden scroll-smooth">
+    <main className="h-screen w-screen overflow-hidden scroll-smooth">
       <HomePage scrollY={scrollY} handleScroll={handleScroll} />
       <Ballon scrollY={scrollY} handleResetScroll={handleResetScroll} />
       <AboutPage scrollY={scrollY} />
       <ProjectPage scrollY={scrollY} />
       <FormPage scrollY={scrollY} />
-    </div>
+    </main>
   );
 }
